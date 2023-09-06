@@ -1,1 +1,57 @@
+//! Una agenda telefónica
 
+const contactos = [
+
+];
+
+const numeros = [
+
+];
+
+const agregar = (contactos, numeros) => {
+    contactos.push(contactos);
+    numeros.push(numeros);
+}
+
+const editar = (contactos, numeros) => {
+    let posicion = contactos.indexOf(contactos);
+    contactos[posicion] = contactos;
+    numeros[posicion] = numeros;
+}  
+
+const borrar = (contactos) => {
+    let posicion = contactos.indexOf(contactos);
+    contactos.splice(posicion, 1);
+    numeros.splice(posicion, 1);
+}
+
+const printcontactos = () => {
+    for (let i = 0; i <= contactos.length - 1; i++){
+        console.log(`Nombre : ${contactos[i]}, Telefono: ${numeros[i]}`);
+    }
+}
+
+const agendaTelefonica = (actionInput, contactos, numeros) =>{
+    console.log("1.- Agregar")
+    console.log("2.- Editar ")
+    console.log("3.- Eliminar ")
+
+}
+
+let action =actioninput;
+
+switch(action){
+    case "1":
+        agregar(contactos,numeros);
+        break
+    case "2":
+        editar(contactos,numeros);
+        break;
+    case "3":
+        borrar(contactos);
+        break;
+    default:
+        console.log("Presione 1:para borrar el contacto")
+        console.log("presione 2: para editar el contacto")
+        console.log("presione 3: para borrar el contacto")
+}
