@@ -1,1 +1,74 @@
+//! Registro de calificaciones en los que se pueda "EDITAR"
+//!"CAMBIAR","AGREGAR"
 
+    const Alumnos= [
+
+];
+
+    const Asignaturas = [
+
+    ];
+
+    const calificaciones =[
+
+];
+
+    const agregarAlumnos = (Alumnos) =>{
+        Alumnos.push(Alumnos);
+        calificaciones.push([]);
+    }
+
+    const agregarAsignatura = (nombreAsignatura) => {
+        Asignaturas.push(nombreAsignatura);
+
+}
+
+    const agregarCalificacion = (Alumno,Asignaturas,calificaciones) => {
+
+      let IndexAlumnos = Alumno.indexOf(Alumno);
+      let IndexAsignatura = Asignaturas.indexOf(Asignaturas);
+
+      calificaciones[IndexAlumnos][IndexAsignatura] = calificaciones;
+    }
+
+    const PrintAlumnos = () =>
+console.log ("Alumnos");
+for(let i = 0; i <= Alumnos.length - 1; i++){
+    console.log(`Nombre del alumno: ${Alumnos[i]}`);
+
+}
+
+    const printAsignaturas = () =>
+    console.log("Asignaturas");
+for(let i = 0; i <= Asignaturas.length - 1; i++){
+    console.log(`Nombre de la asignatura: ${Asignaturas[i]}`);
+}
+
+    const printCalificaciones = () =>{
+
+    for (let a = 0; a <= Alumnos.length - 1; a++){
+        for (let b = 0; b <= Asignaturas.length - 1; b++){
+            console.log(`Alumno: ${Alumnos[a]} Materia: ${Asignaturas[b]} Calificación: ${calificaciones[a][b]}`);
+        }
+    }
+}          
+    const registroCalificacion = (,Alumnos,Asignaturas,calificaciones) => {
+
+        console.log("Agregar alumnos nuevos");
+        console.log("Editar calificacion de alumno");
+        console.log("Eliminar calificacion de alumno")
+    }
+
+    switch(){
+        case "1":
+            PrintAlumnos(Alumnos);
+            break;
+        case "2":
+            printAsignaturas(Asignaturas);
+            break;
+        case "3":
+            printCalificaciones(Alumnos,asignaturas,calificacion);
+        case "4":
+            
+            console.log("Que desea realizar?");
+    }
