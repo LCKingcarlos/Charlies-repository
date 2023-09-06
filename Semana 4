@@ -1,1 +1,39 @@
+//! Cadena de datos
 
+let text = [
+["H"], ["o"],
+["l"], ["a"]
+];
+
+const stringText = () => {
+let mensaje = "";
+for (let i = 0; i <= text.length - 1; i++){
+mensaje = mensaje + text[i];
+}
+console.log(mensaje);
+}
+
+const addChar = (caracter) => {
+text.push([caracter]);
+}
+
+const deleteChar = (Lugar) => {
+text.splice(Lugar, 1)
+}
+
+const editChar = (mensaje, Lugar) => {
+let i = parseInt(Lugar);
+let j = 0;
+
+text[i][0] = Lugar;
+}
+
+addChar("!");
+stringText();
+console.log("=======");
+deleteChar(3);
+stringText();
+console.log("==========");
+editChar("a", 3);
+stringText();
+console.log("======
