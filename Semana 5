@@ -1,1 +1,53 @@
+//!Crear una libreria
+
+const biblioteca = [];
+
+const agregarLibro = ({ titulo, autor, año }) => {
+    const libro = { titulo, autor, año };
+    biblioteca.push(libro);
+    console.log(`Se ha añadido el libro: ${titulo}`);
+}
+
+const imprimirLibros = () => {
+    console.log(" Libros en existencicia: ");
+    biblioteca.forEach(libro => {
+        console.log("------------");
+        console.log(`Libro: ${libro.titulo}`);
+        console.log(`Autor: ${libro.autor}`);
+        console.log(`Año  : ${libro.año}`);
+    });
+    console.log("--------");
+}
+
+const gestionarBiblioteca = (accion, libro) => {
+    if (accion === "1") {
+        agregarLibro(libro);
+    } else if (accion === "2") {
+        imprimirLibros();
+    } else {
+        console.log("Que opcion desea ?");
+    }
+}
+
+gestionarBiblioteca("1", {
+    titulo: "Cien Años de Soledad",
+    autor: "Gabriel García Márquez",
+    año: "1967"
+});
+gestionarBiblioteca("1", {
+    titulo: "El principito",
+    autor: "Antoine de Saint-Exupéry",
+    año: "1943"
+});
+gestionarBiblioteca("1", {
+    titulo: "Sincrodestino",
+    autor: "Deepak Chopra",
+    año: "2003"
+});
+gestionarBiblioteca("1", {
+    titulo: "Cuerpos sin edad, mentes sin tiempo",
+    autor: "Deepak Chopra",
+    año: "1993"
+});
+gestionarBiblioteca("2");
 
