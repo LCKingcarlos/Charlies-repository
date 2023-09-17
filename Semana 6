@@ -1,0 +1,31 @@
+class motocicletas{
+    constructor (marca,nombre,numerocilindros,velocidad,tipodemotor){
+        this.marca = marca;
+        this.nombre = nombre;
+        this.numerocilindros = numerocilindros;
+        this.velocidad = velocidad;
+        this.tipodemotor = tipodemotor
+
+    this.infoMoto = `
+    La motocicleta kawasaki presenta estas caracteristicas:
+    Marca: ${this.marca},
+    Nombre: ${this.nombre},
+    cilindraje: ${this.numerocilindros},
+    Velocidad: ${this.velocidad},
+    tipo de motor: ${this.tipodemotor},
+    `;
+}
+mostrarInfo(){
+        console.log(this.infoMoto);
+    }
+}
+
+const moto1 = new motocicletas (
+    "Kawasaki",
+    "Ninja 1000 sx",
+    "4",
+    "290 Km",
+    "Manual",
+);
+
+moto1.mostrarInfo();
