@@ -1,31 +1,57 @@
-class motocicletas{
-    constructor (marca,nombre,numerocilindros,velocidad,tipodemotor){
-        this.marca = marca;
+//! Crear un sistema que pueda agrega,cambiar y eliminar
+class Empleado {
+    constructor(nombre, apellido, id, cargo, salario) {
         this.nombre = nombre;
-        this.numerocilindros = numerocilindros;
-        this.velocidad = velocidad;
-        this.tipodemotor = tipodemotor
-
-    this.infoMoto = `
-    La motocicleta kawasaki presenta estas caracteristicas:
-    Marca: ${this.marca},
-    Nombre: ${this.nombre},
-    cilindraje: ${this.numerocilindros},
-    Velocidad: ${this.velocidad},
-    tipo de motor: ${this.tipodemotor},
-    `;
-}
-mostrarInfo(){
-        console.log(this.infoMoto);
+        this.apellido = apellido;
+        this.id = id;
+        this.cargo = cargo;
+        this.salario = salario;
     }
 }
 
-const moto1 = new motocicletas (
-    "Kawasaki",
-    "Ninja 1000 sx",
-    "4",
-    "290 Km",
-    "Manual",
-);
+class SistemaEmpleados {
+    constructor() {
+        this.empleados = [];
+    }
 
-moto1.mostrarInfo();
+    agregarEmpleado(empleado) {
+        this.empleados.push(empleado);
+    }
+
+    listarEmpleados() {
+        return this.empleados;
+    }
+
+    editarEmpleado(id, nuevoCargo, nuevoSalario) {
+        const empleado = this.empleados.find(emp => emp.id === id);
+        if (empleado) {
+            empleado.cargo = nuevoCargo;
+            empleado.salario = nuevoSalario;
+        } else {
+            console.log("Empleado no encontrado");
+        }
+    }
+
+    eliminarEmpleado(id) {
+        this.empleados = this.empleados.filter(emp => emp.id !== id);
+    }
+}
+
+// Ejemplo de uso
+const sistemaEmpleados = new SistemaEmpleados();
+
+sistemaEmpleados.agregarEmpleado(new Empleado("John", "Doe", 1, "Desarrollador", 50000));
+sistemaEmpleados.agregarEmpleado(new Empleado("Jane", "Smith", 2, "Gerente", 60000));
+
+console.log("Empleados:");
+console.log(sistemaEmpleados.listarEmpleados());
+
+sistemaEmpleados.editarEmpleado(1, "Desarrollador Senior", 60000);
+
+console.log("Empleados después de la edición:");
+console.log(sistemaEmpleados.listarEmpleados());
+
+sistemaEmpleados.eliminarEmpleado(2);
+
+console.log("Empleados después de la eliminación:");
+console.log(sistemaEmpleados.listarEmpleados());
