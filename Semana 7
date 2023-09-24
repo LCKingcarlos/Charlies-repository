@@ -1,1 +1,39 @@
+//! CREAR REGISTRO DE ALUMNOS
+
+class Estudiante {
+    constructor(nombre, matricula) {
+        this.nombre = nombre;
+        this.matricula = matricula;
+        this.notas = [];
+    }
+
+    agregarNota(nota) {
+        this.notas.push(nota);
+    }
+
+    obtenerPromedio() {
+        if (this.notas.length === 0) return 0;
+
+        const sumaNotas = this.notas.reduce((total, nota) => total + nota, 0);
+        return sumaNotas / this.notas.length;
+    }
+
+    mostrarDatos() {
+        console.log(`Nombre: ${this.nombre}`);
+        console.log(`Matrícula: ${this.matricula}`);
+        console.log(`Notas: ${this.notas.join(', ')}`);
+        console.log(`Promedio: ${this.obtenerPromedio()}`);
+    }
+}
+
+// Crear objetos de estudiantes 
+const estudiante1 = new Estudiante("Juan", "2021001");
+estudiante1.agregarNota(90);
+estudiante1.agregarNota(85);
+estudiante1.mostrarDatos();
+
+const estudiante2 = new Estudiante("Maria", "2021002");
+estudiante2.agregarNota(95);
+estudiante2.agregarNota(88);
+estudiante2.mostrarDatos();
 
