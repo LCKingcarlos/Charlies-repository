@@ -1,1 +1,27 @@
+//! Crear un metodo para pila para que de un error
+
+class PilaLimitada {
+    constructor(capacidad) {
+        this.capacidad = capacidad;
+        this.pila = [];
+    }
+
+    push(elemento) {
+        if (this.pila.length >= this.capacidad) throw new Error('La pila está llena.');
+        this.pila.push(elemento);
+    }
+
+    pop() { return this.pila.pop() || null; }
+    peek() { return this.pila[this.pila.length - 1] || null; }
+}
+
+try {
+    const miPila = new PilaLimitada(3);
+    miPila.push("A");
+    miPila.push("B");
+    miPila.push("C");
+    miPila.push("D");
+} catch (error) {
+    console.error(error.message);
+}
 
